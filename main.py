@@ -180,12 +180,22 @@ temp = rag("are accounting fees deductable ? provide it as a table with rate of 
 
 print(temp.content)
 # %%
+# output the data to keep it in store in case the source website ever changes 
+# Ensure the data directory exists
+os.makedirs("data", exist_ok=True)
+
+# Write the markdown data to a file
+with open("data/output.md", "w", encoding="utf-8") as f:
+    for doc in docs_markdown:
+        f.write(doc + "\n\n")
+
+
+#%%
 
 # --------------------------------------------------------------
 # Basic PDF extraction
 # --------------------------------------------------------------
 
-#%%
 # pdf_path = "C:/Users/vince/OneDrive/Bureau/AI/RAG/docling/ai-cookbook/inputs/charges-deductibles-brochure-202409.pdf"
 # result = converter.convert(pdf_path)
 
@@ -194,4 +204,3 @@ print(temp.content)
 # json_output = document.export_to_dict()
 
 # print(markdown_output)
-
