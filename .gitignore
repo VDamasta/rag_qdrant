@@ -1,0 +1,10 @@
+# Exlcude environment variables
+.env
+
+# Exclude virtual environment
+.venv/
+
+#exclude cache
+__pycache__/
+*.pyc
+*.pyo
