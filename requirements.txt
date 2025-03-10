@@ -1,3 +1,4 @@
 openai
 docling
 dotenv
+qdrant_client
