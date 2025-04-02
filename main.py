@@ -1,5 +1,5 @@
 ### RAG using docling, qdrant, fastembed and deepseek
-
+#%%
 from docling.document_converter import DocumentConverter
 from utils.sitemap import get_sitemap_urls
 
@@ -176,18 +176,18 @@ def rag(question: str, n_points: int = 3) -> str:
     return query_open_ai(metaprompt)
 
 #%%
-temp = rag("are accounting fees deductable ? provide it as a table with rate of deductibility for taxes and VAT", n_points = 1) 
+temp = rag("are car related expenses deductable ? provide it as a table with rate of deductibility for taxes and VAT", n_points = 1) 
 
 print(temp.content)
 # %%
 # output the data to keep it in store in case the source website ever changes 
 # Ensure the data directory exists
-os.makedirs("data", exist_ok=True)
+# os.makedirs("data", exist_ok=True)
 
-# Write the markdown data to a file
-with open("data/output.md", "w", encoding="utf-8") as f:
-    for doc in docs_markdown:
-        f.write(doc + "\n\n")
+# # Write the markdown data to a file
+# with open("data/output.md", "w", encoding="utf-8") as f:
+#     for doc in docs_markdown:
+#         f.write(doc + "\n\n")
 
 
 #%%
